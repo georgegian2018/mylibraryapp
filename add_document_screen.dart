@@ -81,3 +81,16 @@ class _AddDocumentScreenState extends State<AddDocumentScreen> {
     );
   }
 }
+
+// Inside _saveDocument in AddDocumentScreen
+final newDocument = Document(
+  filePath: _filePath!,
+  title: _title,
+  author: _author,
+  type: _type,
+  tags: [],
+);
+
+await DatabaseService().insertDocument(newDocument);
+await FirestoreService().addDocumentToCloud(newDocument); // Sync to cloud
+Navigator.pop(context);
