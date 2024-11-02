@@ -233,3 +233,30 @@ List<String> _selectedTags = [];
 
 // Filter logic:
 final matchesTags = _selectedTags.isEmpty || _selectedTags.any((tag) => doc.tags.contains(tag));
+
+// Modify LibraryScreen to include an export option
+void _exportReferences(List<Document> documents) {
+  final bibtexEntries = documents.map((doc) => BibTeXFormatter.format(doc)).join('\n\n');
+  // You can use a file saving or sharing plugin here to save `bibtexEntries`
+  print(bibtexEntries); // For debugging, print the BibTeX output
+}
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('Research Library'),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.download),
+          onPressed: () {
+            // Export all documents or allow selection for exporting specific documents
+            _exportReferences(documents);
+          },
+        ),
+      ],
+    ),
+    // Rest of the LibraryScreen code...
+  );
+}
+
