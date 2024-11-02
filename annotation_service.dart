@@ -28,3 +28,23 @@ class AnnotationService {
     return maps.map((map) => Annotation.fromMap(map)).toList();
   }
 }
+
+
+// Display annotations within build method
+Column(
+  children: [
+    Expanded(
+      child: PdfView(controller: _pdfController),
+    ),
+    Expanded(
+      child: ListView(
+        children: document.annotations
+            .where((annotation) => annotation.page == _currentPage)
+            .map((annotation) => ListTile(
+                  title: Text(annotation.comment),
+                ))
+            .toList(),
+      ),
+    ),
+  ],
+);
