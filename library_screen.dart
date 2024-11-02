@@ -227,3 +227,9 @@ class _LibraryScreenState extends State<LibraryScreen> {
     );
   }
 }
+
+// Add a tag filter similar to type filter if needed
+List<String> _selectedTags = [];
+
+// Filter logic:
+final matchesTags = _selectedTags.isEmpty || _selectedTags.any((tag) => doc.tags.contains(tag));
