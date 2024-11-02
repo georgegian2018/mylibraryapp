@@ -26,7 +26,7 @@ flutter create research_library_app
 cd research_library_app
 
 
-Folder Structure Setup: Organize folders for a clear structure.
+Folder Structure Setup: Organize folders for a clear structure. \\
 lib/
 ├── models/            # Data models (e.g., Document, Metadata)
 ├── providers/         # State management
