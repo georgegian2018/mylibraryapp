@@ -1,0 +1,7 @@
+dependencies:
+  flutter:
+    sdk: flutter
+  pdfx: ^latest_version  # PDF viewing support
+  sqflite: ^latest_version  # Database storage for documents and metadata
+  provider: ^latest_version  # State management
+  path_provider: ^latest_version  # File access
