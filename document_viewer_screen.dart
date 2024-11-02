@@ -59,3 +59,13 @@ class _DocumentViewerScreenState extends State<DocumentViewerScreen> {
     );
   }
 }
+
+// Inside the ListTile onTap in LibraryScreen
+onTap: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => DocumentViewerScreen(filePath: document.filePath),
+    ),
+  );
+},
