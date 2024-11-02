@@ -51,3 +51,48 @@ class Document {
     );
   }
 }
+
+
+
+
+
+// lib/models/document.dart
+class Annotation {
+  final int page;
+  final String comment;
+
+  Annotation({required this.page, required this.comment});
+
+  Map<String, dynamic> toMap() {
+    return {'page': page, 'comment': comment};
+  }
+
+  factory Annotation.fromMap(Map<String, dynamic> map) {
+    return Annotation(
+      page: map['page'],
+      comment: map['comment'],
+    );
+  }
+}
+
+class Document {
+  // Existing fields...
+  List<Annotation> annotations;
+
+  Document({
+    // Existing parameters...
+    this.annotations = const [],
+  });
+
+  Map<String, dynamic> toMap() {
+    // Existing mapping...
+    'annotations': annotations.map((e) => e.toMap()).toList(),
+  }
+
+  factory Document.fromMap(Map<String, dynamic> map) {
+    // Existing code...
+    annotations: (map['annotations'] as List)
+        .map((annotation) => Annotation.fromMap(annotation))
+        .toList(),
+  }
+}
