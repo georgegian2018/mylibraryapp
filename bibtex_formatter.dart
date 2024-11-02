@@ -16,3 +16,9 @@ class BibTeXFormatter {
     return buffer.toString();
   }
 }
+
+void _exportReferences(List<Document> documents) async {
+  final bibtexEntries = documents.map((doc) => BibTeXFormatter.format(doc)).join('\n\n');
+  final filePath = await FileService.saveBibTeX(bibtexEntries, 'references');
+  print('BibTeX file saved at $filePath');
+}
