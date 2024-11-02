@@ -1,4 +1,5 @@
 dependencies:
+  pdfx: ^latest_version
   flutter:
     sdk: flutter
   pdfx: ^latest_version  # PDF viewing support
