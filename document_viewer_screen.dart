@@ -69,3 +69,53 @@ onTap: () {
     ),
   );
 },
+
+
+// Inside _DocumentViewerScreenState in document_viewer_screen.dart
+void _addAnnotation(int page) async {
+  final annotationText = await showDialog<String>(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text('Add Annotation'),
+      content: TextField(
+        decoration: InputDecoration(hintText: 'Enter your comment'),
+        onChanged: (value) => annotationText = value,
+      ),
+      actions: [
+        TextButton(
+          child: Text('Cancel'),
+          onPressed: () => Navigator.pop(context),
+        ),
+        TextButton(
+          child: Text('Save'),
+          onPressed: () => Navigator.pop(context, annotationText),
+        ),
+      ],
+    ),
+  );
+
+  if (annotationText != null) {
+    final newAnnotation = Annotation(page: page, comment: annotationText);
+    await AnnotationService().addAnnotation(document.id!, newAnnotation);
+    setState(() {
+      document.annotations.add(newAnnotation);
+    });
+  }
+}
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(title: Text('Document Viewer')),
+    body: PdfView(
+      controller: _pdfController,
+      onPageChanged: (page) {
+        _currentPage = page;
+      },
+    ),
+    floatingActionButton: FloatingActionButton(
+      child: Icon(Icons.note_add),
+      onPressed: () => _addAnnotation(_currentPage),
+    ),
+  );
+}
