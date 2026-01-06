@@ -36,3 +36,12 @@ lib/
 └── widgets/           # Reusable widgets (e.g., search bar, document list)
 
 ```
+
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
