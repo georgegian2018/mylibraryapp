@@ -1,4 +1,4 @@
-# mylibraryapp
+# My Library App
 Core Plan for Research Library App
 1. Document Management Features
    Categorization: Organize documents by type (e.g., thesis, journal, article).
