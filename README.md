@@ -27,9 +27,12 @@ cd research_library_app
 
 
 Folder Structure Setup: Organize folders for a clear structure. 
+```text
 lib/
 ├── models/            # Data models (e.g., Document, Metadata)
 ├── providers/         # State management
 ├── screens/           # Screens for viewing and managing documents
 ├── services/          # Service classes for database and file handling
 └── widgets/           # Reusable widgets (e.g., search bar, document list)
+
+```
