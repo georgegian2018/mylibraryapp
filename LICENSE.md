@@ -1,4 +1,6 @@
-# Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0)
+# 📜 License
+
+## Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0)
 
 This repository and its contents are licensed under the  
 **Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)**.
@@ -21,3 +23,5 @@ This repository and its contents are licensed under the
 
 🔗 **Full license text:**  
 https://creativecommons.org/licenses/by-nc/4.0/
+This project is licensed under the [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/).
+ 
